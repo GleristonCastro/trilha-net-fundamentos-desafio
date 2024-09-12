@@ -6,7 +6,7 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 decimal precoInicial = 0;
 decimal precoPorHora = 0;
 
-Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n" +
+Console.WriteLine("Seja bem vindo ao sistema de estacionamento ParkingEasy!\n" +
                   "Digite o preço inicial:");
 precoInicial = Convert.ToDecimal(Console.ReadLine());
 
@@ -23,6 +23,8 @@ bool exibirMenu = true;
 while (exibirMenu)
 {
     Console.Clear();
+    Console.WriteLine($"### Sistema ParkingEasy! ### {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}");
+    Console.WriteLine($"Agora o estacionamento {(es.veiculosCounter() == 0 ? "não possui nenhum" : "possui" + $" {es.veiculosCounter()}")} {(es.veiculosCounter() > 1 ? "veículos estacionados" : "veículo estacionado")}");
     Console.WriteLine("Digite a sua opção:");
     Console.WriteLine("1 - Cadastrar veículo");
     Console.WriteLine("2 - Remover veículo");
